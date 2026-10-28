@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Lucky Cherries is a colorful 10x10 cluster slot game demo built in plain HTML, CSS, and JavaScript."
+    />
+    <title>Lucky Cherries</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="topbar" aria-label="Game header">
+        <div class="title-wrap">
+          <p class="eyebrow">Lucky Arcade</p>
+          <h1>Lucky Cherries</h1>
+        </div>
+        <button
+          id="resetButton"
+          class="reset-button"
+          type="button"
+          aria-label="Reset the game balance and board"
+        >
+          Reset
+        </button>
+      </header>
+
+      <main class="game-layout">
+        <section class="panel stats-panel" aria-label="Current game status">
+          <div class="stat-card">
+            <span class="label">Balance</span>
+            <strong id="balance">1000</strong>
+          </div>
+          <div class="stat-card">
+            <span class="label">Last Win</span>
+            <strong id="lastWin">0</strong>
+          </div>
+          <div class="stat-card">
+            <span class="label">Bet</span>
+            <strong id="currentBet">10</strong>
+          </div>
+        </section>
+
+        <section class="panel controls-panel" aria-label="Bet and spin controls">
+          <div class="bet-options" role="group" aria-label="Choose a bet amount">
+            <button class="bet-button active" data-bet="5" type="button" aria-label="Bet 5 credits">
+              5
+            </button>
+            <button class="bet-button" data-bet="10" type="button" aria-label="Bet 10 credits">
+              10
+            </button>
+            <button class="bet-button" data-bet="20" type="button" aria-label="Bet 20 credits">
+              20
+            </button>
+            <button class="bet-button" data-bet="50" type="button" aria-label="Bet 50 credits">
+              50
+            </button>
+          </div>
+
+          <button
+            id="spinButton"
+            class="spin-button"
+            type="button"
+            aria-label="Spin the Lucky Cherries board"
+          >
+            Spin
+          </button>
+        </section>
+
+        <section class="panel message-panel" aria-label="Game message">
+          <span class="label">Game Message</span>
+          <p id="message" aria-live="polite">Ready to spin for a lucky cluster!</p>
+        </section>
+
+        <section class="panel board-panel" aria-label="Lucky Cherries game board">
+          <div
+            id="board"
+            class="board"
+            role="grid"
+            aria-rowcount="10"
+            aria-colcount="10"
+            aria-label="10 by 10 slot board"
+          ></div>
+        </section>
+      </main>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>
