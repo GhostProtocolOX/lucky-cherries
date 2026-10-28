@@ -1,92 +1,95 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Lucky Cherries is a colorful 10x10 cluster slot game demo built in plain HTML, CSS, and JavaScript."
-    />
-    <title>Lucky Cherries</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <div class="app-shell">
-      <header class="topbar" aria-label="Game header">
-        <div class="title-wrap">
-          <p class="eyebrow">Lucky Arcade</p>
-          <h1>Lucky Cherries</h1>
-        </div>
-        <button
-          id="resetButton"
-          class="reset-button"
-          type="button"
-          aria-label="Reset the game balance and board"
-        >
-          Reset
-        </button>
-      </header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#16091f">
+  <title>Lucky Cherries 🍒</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div>
+        <p class="eyebrow">✦ LUCKY ARCADE ✦</p>
+        <h1>Lucky <span>Cherries</span></h1>
+        <p class="subtitle">10 × 10 Cluster Reel</p>
+      </div>
+      <button id="resetBtn" class="reset">Reset</button>
+    </header>
 
-      <main class="game-layout">
-        <section class="panel stats-panel" aria-label="Current game status">
-          <div class="stat-card">
-            <span class="label">Balance</span>
-            <strong id="balance">1000</strong>
-          </div>
-          <div class="stat-card">
-            <span class="label">Last Win</span>
-            <strong id="lastWin">0</strong>
-          </div>
-          <div class="stat-card">
-            <span class="label">Bet</span>
-            <strong id="currentBet">10</strong>
-          </div>
-        </section>
+    <section class="stats">
+      <div class="stat">
+        <span>BALANCE</span>
+        <strong id="balance">1,000</strong>
+      </div>
+      <div class="stat">
+        <span>LAST WIN</span>
+        <strong id="lastWin">0</strong>
+      </div>
+      <div class="stat">
+        <span>BET</span>
+        <strong id="betLabel">10</strong>
+      </div>
+    </section>
 
-        <section class="panel controls-panel" aria-label="Bet and spin controls">
-          <div class="bet-options" role="group" aria-label="Choose a bet amount">
-            <button class="bet-button active" data-bet="5" type="button" aria-label="Bet 5 credits">
-              5
-            </button>
-            <button class="bet-button" data-bet="10" type="button" aria-label="Bet 10 credits">
-              10
-            </button>
-            <button class="bet-button" data-bet="20" type="button" aria-label="Bet 20 credits">
-              20
-            </button>
-            <button class="bet-button" data-bet="50" type="button" aria-label="Bet 50 credits">
-              50
-            </button>
-          </div>
+    <section class="machine">
+      <div class="machine-heading">
+        <span>🍒 YOUR LUCKY REELS 🍒</span>
+        <span class="live">● DEMO</span>
+      </div>
 
-          <button
-            id="spinButton"
-            class="spin-button"
-            type="button"
-            aria-label="Spin the Lucky Cherries board"
-          >
-            Spin
-          </button>
-        </section>
+      <div class="reel-frame">
+        <div id="reel" class="reel"
+             role="grid" aria-label="10 by 10 slot grid"></div>
+        <div id="overlay" class="overlay hidden"
+             aria-live="polite"></div>
+      </div>
 
-        <section class="panel message-panel" aria-label="Game message">
-          <span class="label">Game Message</span>
-          <p id="message" aria-live="polite">Ready to spin for a lucky cluster!</p>
-        </section>
+      <div class="legend">
+        <span>🍒 Cherry</span>
+        <span>🍋 Lemon</span>
+        <span>🍇 Grapes</span>
+        <span>🍀 Clover</span>
+        <span>⭐ Star</span>
+      </div>
+    </section>
 
-        <section class="panel board-panel" aria-label="Lucky Cherries game board">
-          <div
-            id="board"
-            class="board"
-            role="grid"
-            aria-rowcount="10"
-            aria-colcount="10"
-            aria-label="10 by 10 slot board"
-          ></div>
-        </section>
-      </main>
-    </div>
+    <section class="controls">
+      <p class="section-title">CHOOSE YOUR BET</p>
+      <div class="bets">
+        <button class="bet-btn" data-bet="5">5</button>
+        <button class="bet-btn selected" data-bet="10">10</button>
+        <button class="bet-btn" data-bet="20">20</button>
+        <button class="bet-btn" data-bet="50">50</button>
+      </div>
+      <button id="spinBtn" class="spin-btn">SPIN 🍒</button>
+      <button id="soundBtn" class="sound-btn">🔊 Sound: On</button>
+    </section>
 
-    <script src="game.js"></script>
-  </body>
+    <section class="message-card">
+      <span class="section-title">GAME MESSAGE</span>
+      <p id="message" aria-live="polite">
+        Ready to spin for a lucky cluster!
+      </p>
+    </section>
+
+    <section class="paytable">
+      <h2>🍀 LUCKY PAYTABLE</h2>
+      <p>Connect 5 or more matching symbols horizontally or vertically.</p>
+      <div><span>🍒 Cherries</span><strong>2×</strong></div>
+      <div><span>🍋 Lemons</span><strong>1.5×</strong></div>
+      <div><span>🍇 Grapes</span><strong>1.2×</strong></div>
+      <div><span>🍀 Clovers</span><strong>1×</strong></div>
+      <div><span>⭐ Stars</span><strong>3×</strong></div>
+    </section>
+
+    <footer>
+      Demo credits only. No real-money wagers or cash prizes.
+    </footer>
+  </main>
+
+  <script src="game.js"></script>
+</body>
 </html>
